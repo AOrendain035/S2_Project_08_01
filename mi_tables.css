@@ -13,12 +13,53 @@
 
 */
 
+/* Underneath, in the table styles section, I added styles that will specifically target the entire table as a whole, the ultra specific components have styles later on in the bottom two setions. Anyways, I first gave the table a linear gradient as a background color; the gradient starts at the bottom as black and fades into a pale blueish color towards the top; I also gave the entire table a grey border. Then, I gave the header cells and data cells a border that is also grey but is slightly smaller in width. After that, I gave the header cells a background color of black and a font color of a slightly less blueish color than the table gradient; this was so that the user will see a clear distinction between the header cells and everything else. Next, I changed the data cells' text color to white and made the font size a bit smaller.*/
 /* Table Styles */
+table {
+    background: linear-gradient(rgb(190, 215, 255), black);
+    border: 5px solid grey;
+}
 
+table#pricing th,
+table#pricing td {
+    border: 3px solid grey;
+    line-height: 1.4em;
+    padding: 8px;
+}
 
+th {
+    background-color: black;
+    color: rgb(130, 210, 255);
+    font-weight: normal;
+}
 
+td {
+    color: white;
+    font-size: 0.9em;
+    text-align: top;
+}
+
+/* In the small bit of code underneath, I gave the columns (the ones that were mentioned in the index) different widths. The first column has a bigger width so as to further distniguish its elements from the rest of the table. The second column(s) have a smaller width for the aforementioned reason; to distinguish the first column. */
 /* Column Styles */
+col#firstCol {
+    width: 24%;
+}
 
+col.dataCols {
+    width: 45%;
+}
 
-
+/* Finally, I made the last three styles specifically affect the table head and its elements it contains. First, I gave the table rows, within the table head, a height of 60px so that they will be bigger than the data cells, or to distinguish them from the data cell rows. Next, I gave the "select a plan" header cell a font size of 2em so that it will be the first text that the user sees in the table (as it has the biggest font size). Then, I gave the remaining header cells in the first row a transparent background color and a font color of black; this was so there will be a distinction between the two header cell rows. */
 /* Table Header Styles */
+table#pricing thead tr {
+    height: 60px;
+}
+
+thead tr:first-of-type th:first-of-type {
+    font-size: 2em;
+}
+
+thead tr:first-of-type th:not(:first-of-type) {
+    background-color: transparent;
+    color: black;
+}
